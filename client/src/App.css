@@ -1,0 +1,537 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: rgb(199, 214, 214) !important;
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-button {
+  background-color: pink;
+  transition: background-color 0.5s;
+}
+
+.main-button:hover {
+  background-color: rgb(253, 138, 158);
+}
+
+.sidbar-container {
+  background-color: white;
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: small;
+}
+
+.task-button {
+  background-color: rgb(97, 52, 193);
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: small;
+}
+
+.modal-button {
+  background-color: rgb(97, 52, 193);
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-size: small;
+  width: 90%;
+  margin-right: 22px;
+}
+
+.task-button:hover {
+  background-color: rgb(88, 46, 179);
+}
+
+.modal-button:hover {
+  background-color: rgb(88, 46, 179);
+}
+
+.button-small {
+  background-color: rgb(97, 52, 193);
+  border: none;
+  border-radius: 10px;
+  padding: 7px 15px;
+  position: fixed;
+  right: 50px;
+  top: 20px;
+  color: white;
+  font-size: small;
+}
+
+.button-small:hover {
+  background-color: rgb(88, 46, 179);
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgba(73, 65, 65, 1);
+  padding: 5px 0px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover span {
+  color: red;
+}
+
+.nav-link span {
+  margin-left: 20px;
+}
+
+.new:hover {
+  color: rgb(83, 24, 231);
+}
+
+.dropDown-link {
+  text-decoration: none;
+  color: rgba(73, 65, 65, 1);
+  padding: 0px 124px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: -25px;
+  transition: all 0.3s ease;
+}
+
+.dropDown-link span {
+  margin-left: -90px;
+  cursor: "pointer";
+  transition: all 0.3s ease;
+}
+
+.dropDown-link:hover span {
+  margin-left: -90px;
+  color: red;
+}
+
+.search-input {
+  padding: 10px 40px 10px 15px;
+  border-radius: 10px;
+  width: 250px;
+  position: relative;
+  font-size: small;
+}
+
+input {
+  border: 2px solid white;
+  transition: border 0.2s;
+}
+
+input:hover {
+  border: 2px solid rgb(97, 52, 193);
+}
+
+input:focus {
+  outline: none;
+}
+
+.search-image {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.li-directory {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.icon-directory {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.li-directory:hover .icon-directory {
+  opacity: 1;
+}
+
+.sidbar-select {
+  border: 2px solid white;
+  transition: border 0.2s;
+}
+
+.sidbar-select:hover {
+  border: 2px solid rgb(97, 52, 193);
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
+.completed {
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: small;
+  font-weight: 500;
+  background-color: rgba(240, 223, 90, 1);
+  border: solid 1px rgba(240, 223, 90, 1);
+  color: rgba(60, 54, 10, 1);
+  cursor: pointer;
+}
+
+.completed.done {
+  background-color: rgba(91, 190, 119, 1);
+  border: solid 1px rgba(91, 190, 119, 1);
+  color: rgba(8, 56, 22, 1);
+}
+
+.completed .icon-completed {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .sidbar-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .dropDown-link {
+    text-decoration: none;
+    color: rgba(73, 65, 65, 1);
+    padding: 5px 109px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: -25px;
+    transition: all 0.3s ease;
+  }
+
+  .sidbar-container.open {
+    transform: translateX(0);
+  }
+
+  .hamburger-btn {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    z-index: 11;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .sidbar-title {
+    display: none;
+  }
+
+  .task-button {
+    background-color: rgb(97, 52, 193);
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 16px;
+  }
+
+  .directories {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 400px;
+  }
+
+  .input-header {
+    position: relative;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    left: 55px;
+    top: 20px;
+  }
+
+  .view-1 {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 160px;
+    left: 50px;
+  }
+
+  .view-2 {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 160px;
+    left: 90px;
+  }
+
+  div h4 {
+    color: rgba(49, 47, 47, 1);
+    position: absolute;
+    left: 50px;
+    top: 95px;
+    z-index: 10;
+  }
+
+  .list-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-top: 200px;
+  }
+
+  .sidbar-select {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    right: 50px;
+    top: 140px;
+  }
+}
+
+@media (max-width: 980px) {
+  .list-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 200px;
+  }
+
+  .sidbar-select {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    right: 50px;
+    top: 140px;
+  }
+}
+
+@media (max-width: 700px) {
+  .input-header {
+    position: fixed;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+  }
+  .search-input {
+    padding: 10px 40px 10px 15px;
+    border-radius: 10px;
+    width: 90vw;
+    position: relative;
+  }
+
+  .view-1 {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 200px;
+    left: 50px;
+  }
+
+  .view-2 {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 200px;
+    left: 90px;
+  }
+
+  div h4 {
+    color: rgba(49, 47, 47, 1);
+    position: absolute;
+    left: 50px;
+    top: 140px;
+    z-index: 10;
+  }
+
+  .list-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-top: 300px;
+  }
+
+  .sidbar-select {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    right: 50px;
+    top: 190px;
+  }
+}
+
+@media (max-width: 580px) {
+  .button-small {
+    background-color: rgb(97, 52, 193);
+    border: none;
+    border-radius: 10px;
+    padding: 7px 15px;
+    position: absolute;
+    right: 15px;
+    top: 108%;
+    color: white;
+  }
+
+  .list-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-top: 300px;
+  }
+
+  .completed {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .completed .text {
+    display: none;
+  }
+
+  .completed .icon-completed {
+    display: inline;
+  }
+
+  .input-header {
+    position: relative;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+  }
+  .search-input {
+    padding: 10px 40px 10px 15px;
+    border-radius: 10px;
+    width: 90vw;
+    position: relative;
+  }
+}
+@media (min-width: 1180px) {
+  .hamburger-btn {
+    display: none;
+  }
+  .main-title {
+    display: none;
+  }
+  .input-header {
+    position: relative;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    left: 290px;
+    top: 20px;
+  }
+  .view-1 {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 160px;
+    left: 290px;
+  }
+
+  .view-2 {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 160px;
+    left: 330px;
+  }
+
+  div h4 {
+    color: rgba(49, 47, 47, 1);
+    position: absolute;
+    left: 290px;
+    top: 95px;
+    z-index: 10;
+  }
+
+  .list-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 260px;
+    margin-top: 200px;
+  }
+
+  .sidbar-select {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    right: 50px;
+    top: 140px;
+  }
+
+  .directories {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 440px;
+  }
+}
